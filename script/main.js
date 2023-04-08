@@ -4,6 +4,16 @@
     __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
+  gfx = {
+    tileW: 24,
+    tileH: 24,
+    init: function() {
+      var canvas;
+      canvas = document.querySelector("#game");
+      this.ctx = canvas != null ? typeof canvas.getContext === "function" ? canvas.getContext("2d") : void 0 : void 0;
+      if (!this.ctx) {
+        return false;
+      }
       this.w = canvas.width;
       this.h = canvas.height;
       return true;
