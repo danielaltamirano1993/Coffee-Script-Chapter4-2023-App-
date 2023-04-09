@@ -7,3 +7,12 @@
       game.reset()
   stop: -> @running = false
   start: -> @running = true
+  
+  reset: ->
+    @player = new Player
+    @level = new Level levels[0], @
+    keys.reset()
+    if not @running
+      @start()
+      @tick()
+    
