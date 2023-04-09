@@ -1,0 +1,6 @@
+gfx.coffee
+keys.coffee
+entities/_Entity.coffee
+entities/Player.coffee
+entities/Ninja.coffee
+blocks/_Block.coffee
