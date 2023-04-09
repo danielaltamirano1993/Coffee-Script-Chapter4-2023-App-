@@ -16,3 +16,14 @@
       @start()
       @tick()
     
+  setPlayer: (x, y, level) ->
+    @player.level = level
+    @player.x = x
+    @player.y = y 
+
+  tick: ->
+    return if not @running
+    gfx.clear()
+    @update()
+    @render()
+    setTimeout (-> game.tick()), 33
