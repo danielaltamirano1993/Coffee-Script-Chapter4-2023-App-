@@ -40,3 +40,9 @@ class Level
   addPlayer: (x, y) ->
     @game.setPlayer x * gfx.tileW, y * gfx.tileH, @  
   update: ->
+    # Update the level blocks
+    for row in @map
+      for block in row
+        block.update()
+    ninjas.update() for ninjas in @ninjas
+  render: (gfx) ->
