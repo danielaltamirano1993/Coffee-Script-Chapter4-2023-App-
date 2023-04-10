@@ -8,3 +8,7 @@ class Level
     # 1. Clear level items
     @ninjas = []
     @treasures = 0
+    
+    # 2. Parse the level string into a map
+    asciiMap = (row.split "" for row in level.data.split "\n")
+
