@@ -46,3 +46,8 @@ class Level
         block.update()
     ninjas.update() for ninjas in @ninjas
   render: (gfx) ->
+    # Render the level blocks
+    for row, y in @map
+      for block, x in row
+        block.render gfx, x  * gfx.tileW, y  * gfx.tileH
+    ninjas.render gfx for ninjas in @ninjas
