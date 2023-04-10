@@ -29,3 +29,14 @@ class Level
             new Treasure()
           else new Block()
     
+    # 4. Set the level height and width
+    @h = @map.length
+    @w = @map[0].length
+  addNinja: (x, y) ->
+    xPos = x  * gfx.tileW
+    yPos = y  * gfx.tileH
+    ninja = new Ninja @, xPos, yPos
+    @ninjas.push ninja
+  addPlayer: (x, y) ->
+    @game.setPlayer x * gfx.tileW, y * gfx.tileH, @  
+  update: ->
